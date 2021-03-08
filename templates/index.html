@@ -1,0 +1,73 @@
+{%extends 'model.html'%}
+{%block content%}
+
+<div class="container">
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form action="#" class="sign-in-form">
+        <h2 class="title">Iniciar sesión</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Usuario" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Contraseña" />
+        </div>
+        <input type="submit" value="Ingresar" class="btn solid" />
+      </form>
+
+      <form action="#" class="sign-up-form">
+        <h2 class="title">Registrate</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Nombre de usuario" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Correo" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Contraseña" name='pw' id='pw' />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Confirmar Contraseña" name='check-pw' id='check-pw'/>
+        </div>
+        <input type="submit" class="btns" value="Registrar" />
+      </form>
+    </div>
+  </div>
+
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>¿Eres nuevo aquí?</h3>
+        <p>
+          Si aun no estás registrado y quieres unirte a <br> 
+          nosotros puedes crear una cuenta
+        </p>
+        <button class="btn transparent" id="sign-up-btn">
+          Registrate
+        </button>
+      </div>
+      <img src="{{ url_for('static', filename='img/Hiking.svg') }}" class="image" alt="" />
+    </div>
+    <div class="panel right-panel">
+      <div class="content">
+        <h3>¿Ya tienes una cuenta?</h3>
+        <p>
+          Si ya eres uno de nosotros, <br>
+          ingresa con tu cuenta existente.
+        </p>
+        <button class="btn transparent" id="sign-in-btn">
+          Iniciar sesión
+        </button>
+      </div>
+      <img src="{{ url_for('static', filename='img/researching.svg')}}" class="image" alt="" />
+    </div>
+  </div>
+</div>
+
+{%endblock%}
