@@ -44,3 +44,23 @@ function habilitar() {
 
   boton.disabled = flag;
 }
+
+function habilitai() {
+
+  pwi = document.getElementById("pwI");
+  usernamei = document.getElementById("usernameI");
+  boton = document.getElementById("btnIng");
+
+  let flag = true;
+
+  if (pwi.value.length == 0 || usernamei.value.length == 0 ) {
+    document.getElementById("pTipi").innerHTML = "*     Debe llenar todos los campos";
+    flag = true;
+  } else {
+    document.getElementById("pTipi").innerHTML = "";
+    flag = false;
+  }
+
+  boton.disabled = flag;
+
+}
