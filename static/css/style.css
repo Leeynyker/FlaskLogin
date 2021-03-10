@@ -173,6 +173,11 @@ form.sign-in-form {
   /* background-color: #4d84e2; */
   background-color: #CA87DE;
 }
+
+.pMessage {
+  color: #d341ff;
+}
+
 .panels-container {
   position: absolute;
   height: 100%;
