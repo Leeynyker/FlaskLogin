@@ -6,28 +6,36 @@
 {%endfor%}
 <p>{{rowse}}</p> -->
 
+
+
 <div class="container">
   <div class="forms-container">
     <div class="signin-signup">
 
       <!-- Form de inicio de sesión -->
-      <form action="#" class="sign-in-form" autocomplete="off">
+      <form action="/login" class="sign-in-form" autocomplete="off" method="POST">
         <h2 class="title">Iniciar sesión</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Usuario" id="usernameI" onkeyup="habilitai()" required />
+          <input type="text" name="usernameI" placeholder="Usuario" id="usernameI" onkeyup="habilitai()" required />
         </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Contraseña" id="pwI" onkeyup="habilitai()" required />
+          <input type="password" name="pwI" placeholder="Contraseña" id="pwI" onkeyup="habilitai()" required />
         </div>
         <!-- <input type="submit" value="Ingresar" class="btn solid" /> -->
         <p class="pMessage" id="pTipi"></p>
         <button type="submit" class="btn solid" id="btnIng" disabled  >Ingresar</button>
       </form>
+      
+      {%if ms :%}
+        <script>        
+          document.getElementById("pTipi").innerHTML = "*    {{messageI}}";
+        </script>
+      {%endif%}
 
       <!-- Form de registro de usuarios  -->
-      <form action="/submit" class="sign-up-form" method="POST" autocomplete="off">
+      <form action="/register" class="sign-up-form" method="POST" autocomplete="off">
         <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
         <h2 class="title">Registrate</h2>
         <div class="input-field">
@@ -53,6 +61,12 @@
       </form>
     </div>
   </div>
+
+  {%if ms :%}
+    <script>        
+      document.getElementById("pTipi").innerHTML = "*    {{messageI}}";
+    </script>
+  {%endif%}
 
   <div class="panels-container">
     <div class="panel left-panel">
